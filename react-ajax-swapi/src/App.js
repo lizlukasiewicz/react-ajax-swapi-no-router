@@ -15,9 +15,12 @@ let [ships, setShip] = useState([])
         'https://swapi.dev/api/starships/?page=4'
       ]
     let jarjar = pages.map(page => axios.get(page))
+    
     jarjar = await Promise.all(jarjar)
+    //console.log(jarjar)
     let jarjarData = []
     jarjar.forEach(jarjar => jarjarData = [...jarjarData, ...jarjar.data.results])
+    //console.log(jarjarData)
     setShip(jarjarData)
     })()
   }, [])
@@ -25,7 +28,7 @@ const starships = ships.map((ship, index) => <Starships key={index} ship={ship} 
 
   return (
     <div className="App">
-      <p>starships are meant to flyyyyyyy: </p>
+      <h1>A Long, long time ago<br></br> in a galaxy far, far away...</h1>
       <div id="starship">{starships}</div>
       
     </div>

@@ -7,9 +7,10 @@ export default function Starships(props) {
    
 return(
     <div id="starshipData">
-        <h3>{props.ship.name}</h3>
-        <p>Class:: {props.ship.starship_class}</p>
-        <p>Model:: {props.ship.model}</p>
+        <h3> {props.ship.name}::</h3>
+        <p><strong>Class:</strong> {props.ship.starship_class}</p>
+        <p><strong>Model:</strong> {props.ship.model}</p>
+        <p><strong>Hyperdrive rating:</strong> {props.ship.hyperdrive_rating} </p>
     </div>
 )
 }
@@ -22,5 +23,3 @@ return(
 //     )
 // })}
 
-
-//<h4>{props.ship.name}</h4>
