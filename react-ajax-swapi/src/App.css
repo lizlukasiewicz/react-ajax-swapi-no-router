@@ -39,3 +39,16 @@
     transform: rotate(360deg);
   }
 }
+h3 {
+  color: white;
+}
+p {
+  color: white;
+}
+#starship {
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap:wrap
+}

@@ -3,10 +3,13 @@ import React from 'react'
 //import axios from 'axios'
 
 export default function Starships(props) {
-    console.log(props.ships)
+    console.log(props.ship.name)
+   
 return(
-    <div>
-        <p>starship name</p>
+    <div id="starshipData">
+        <h3>{props.ship.name}</h3>
+        <p>Class:: {props.ship.starship_class}</p>
+        <p>Model:: {props.ship.model}</p>
     </div>
 )
 }

@@ -4,7 +4,7 @@ import Starships from './Starships'
 import axios from 'axios'
 
 const App= () => {
-let [ship, setShip] = useState([])
+let [ships, setShip] = useState([])
 
   useEffect(() => {
     (async function getData() {
@@ -21,13 +21,13 @@ let [ship, setShip] = useState([])
     setShip(jarjarData)
     })()
   }, [])
-const starships = ship.map((ships, index) => <Starships key={index} ships={ships} />)
+const starships = ships.map((ship, index) => <Starships key={index} ship={ship} />)
 
   return (
     <div className="App">
       <p>starships are meant to flyyyyyyy: </p>
-      {starships}
-      <Starships />
+      <div id="starship">{starships}</div>
+      
     </div>
   );
 }
