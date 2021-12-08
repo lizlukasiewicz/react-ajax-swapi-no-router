@@ -4,24 +4,24 @@ import Starships from './Starships'
 import axios from 'axios'
 
 const App= () => {
-let [ships, setShip] = useState([])
+const [ships, setShips] = useState([])
 
   useEffect(() => {
-    (async function getData() {
-      const pages = [
+    (async function getShips() {
+      const urls = [
         'https://swapi.dev/api/starships/?page=1',
         'https://swapi.dev/api/starships/?page=2',
         'https://swapi.dev/api/starships/?page=3',
         'https://swapi.dev/api/starships/?page=4'
       ]
-    let jarjar = pages.map(page => axios.get(page))
+    let responses = urls.map(url => axios.get(url))
     
-    jarjar = await Promise.all(jarjar)
+    responses = await Promise.all(responses)
     //console.log(jarjar)
-    let jarjarData = []
-    jarjar.forEach(jarjar => jarjarData = [...jarjarData, ...jarjar.data.results])
+    let responseData = []
+    responses.forEach(response => responseData = [...responseData, ...response.data.results])
     //console.log(jarjarData)
-    setShip(jarjarData)
+    setShips(responseData)
     })()
   }, [])
 const starships = ships.map((ship, index) => <Starships key={index} ship={ship} />)
